@@ -57,7 +57,7 @@ def response_format(operation_type: str, result: float) -> dict:
     return {"operation_type": operation_type, "result": result,
             "slackUsername": "itzgeebee"}
 
-@app.route('/task2/', methods=['POST'])
+@app.route('/', methods=['POST'])
 @expects_json(schema)
 def do_math():
     data = g.data
@@ -75,7 +75,7 @@ def do_math():
     elif operation_type == "division" or operation_type == "divide" or operation_type == "/":
         result = x / y
 
-    return jsonify(response_format(operation_type, result))
+    return jsonify(response_format(operation_type, result)), 201
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
