@@ -75,7 +75,7 @@ def do_math():
     elif operation_type == "division" or operation_type == "divide" or operation_type == "/":
         result = x / y
 
-    return jsonify(response_format(operation_type, result)), 201
+    return jsonify(response_format(operation_type, result))
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
