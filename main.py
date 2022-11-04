@@ -57,7 +57,7 @@ def response_format(operation_type: str, result: float) -> dict:
     return {"operation_type": operation_type, "result": result,
             "slackUsername": "itzgeebee"}
 
-@app.route('/', methods=['POST'])
+@app.route('/task2/', methods=['POST'])
 @expects_json(schema)
 def do_math():
     data = g.data
